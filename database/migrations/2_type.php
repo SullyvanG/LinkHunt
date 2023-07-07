@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contact', function (Blueprint $table) {
+        Schema::create('type', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
-            $table->text('commentaire');
+            $table->string('nomType');
         });
     }
 

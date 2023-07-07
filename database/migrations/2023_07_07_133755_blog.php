@@ -11,7 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('blog', function (Blueprint $table) {
+            $table->id();
+            $table->string('titre');
+            $table->string('image');
+            $table->text('description');
+            $table->timestamps();
+
+            $table->foreignId('type_id')->constrained()->onDelete('cascade');
+        });
     }
 
     /**
